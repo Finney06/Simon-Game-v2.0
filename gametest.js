@@ -49,34 +49,32 @@ $(document).ready(function () {
     // }, 100);
 
     //Check if it's the last message
-    // else {
-        // Use the default button text
+    if (currentMessageIndex === messages.length - 1) {
+        // Change the button text to 'Start"
+        console.log("start")
+        $("#nextButton").text("Start");
+
+        // Perform actions forthe "Start" button
+        $("#nextButton").on("click", function () {
+            setTimeout(() => {
+                $("#popup1").hide();
+            }, 100);
+
+            if(!started) {
+                startGame();
+            }
+        })
+    } else {
+        // Use the defaulf button text
         $("#nextButton").text("Next");
         // Show the next message when the "Next" button is clicked
         $("#nextButton").click(function () {
             currentMessageIndex = (currentMessageIndex + 1) % messages.length;
             console.log(currentMessageIndex);
             updatePopupContent();
-
-            if (currentMessageIndex === messages.length - 1) {
-                // Change the button text to 'Start"
-                $("#nextButton").text("Start");
-        
-                // Perform actions forthe "Start" button
-                $("#nextButton").on("click", function () {
-                        $("#popup1").hide();
-        
-                    // if (!started) {
-                    //     startGame();
-                    // }
-                })
-            } 
         });
-    // }
+    }
 });
-
-
-
 
 
 // //Function to check for the screensize
@@ -204,25 +202,3 @@ function startOver() {
     started = false;
     console.log(level + +gamePattern + started);
 }
-
-//     // Your existing game logic goes here
-//     function startGame() {
-//         // ...
-//     }
-// });
-
-// $(document).ready(function () {
-//     // Show the popup when the page is loaded
-//     $("#popup").show();
-
-//     // Start the game when the "Start" button is clicked
-//     $("#startButton").click(function () {
-//       $("#popup").hide();
-//       startGame();
-//     });
-
-//     // Your existing game logic goes here
-//     function startGame() {
-//       // ...
-//     }
-//   });

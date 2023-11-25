@@ -7,7 +7,67 @@
 body {
   text-align: center;
   background-color: #011f3f;
+  font-family: "Press Start 2P", cursive;
   min-width: 480px;
+}
+
+.popup {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 11, 11, 0.9);
+}
+
+.popupContentContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 31, 64);
+  padding: 20px;
+  text-align: center;
+  border-radius: 25px;
+  border: 10px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  line-height: 1.5;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.popupHeading {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.popupContent {
+   color: yellow;
+   line-height: 1.5;
+   letter-spacing: 2px;
+   margin-bottom: 20px;
+}
+
+
+
+.popupContentContainer button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  /* margin-left: auto;  */
+  align-self: flex-end;
+  padding: 20px 30px;
+  font-size: 18PX;
+  cursor: pointer;
+  background: red;
+  border-radius: 30px;
+  border:5px solid black;
+  color: white;
+  text-shadow: 2px 2px 0px #000;
+  width: 200px;
+  /* box-shadow: inset -11px 10px 22px -3px rgba(255, 0, 0, 0.75); */
 }
 
 #level-title {
@@ -16,6 +76,7 @@ body {
   margin: 35px auto;
   text-align: center;
   color: #fef2bf;
+  text-shadow: 2px 2px 0px #000;
 }
 
 .container {
@@ -69,4 +130,25 @@ body {
   .container {
     margin-top: 50px;
   }
+
+  .content {
+    line-height: 1.7;
+ }
+
+ .popupContentContainer button {
+  align-self: center;
+ }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
