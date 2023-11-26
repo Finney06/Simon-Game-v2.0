@@ -9,6 +9,31 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
+// Load the high score from local storage
+function loadHighScore() {
+    const storedScore = localStorage.getItem('highScore');
+    return storedScore ? parseInt(storedScore) : 0;
+}
+
+// Save the high score to local storage
+function saveHighScore(score) {
+    localStorage.setItem('highScore', score.toString());
+}
+
+function displayHighScore(){
+    const currentScore = level;
+let highScore = loadHighScore();
+
+if (currentScore > highScore) {
+    highScore = currentScore;
+    saveHighScore(highScore);
+}
+
+$("#highScore").text("High Score: " + highScore)
+
+}
+
+
 $(document).ready(function () {
     //Array of messages to display
     var messages = [{
@@ -49,7 +74,7 @@ $(document).ready(function () {
     //Show the popup when the page is loaded
 
     $("#popup1").fadeIn(1000);
-
+    displayHighScore();
 
     //Check if it's the last message
     // else {
@@ -80,42 +105,6 @@ $(document).ready(function () {
     });
 });
 
-
-
-
-
-// Function to check for the screensize
-// function checkScreenSize() {
-//     var screenWidth =
-//         window.innerWidth ||
-//         document.documentElement.clientWidth ||
-//         document.body.clientWidth;
-
-//     if (screenWidth > 481) {
-//         console.log("Desktop view");
-//         $("#level-title").text("Press A Key to Start");
-        // $(document).keypress(function () {
-        //     if (!started) {
-        //         startGame();
-        //     }
-        // });
-//     } else {
-//         console.log("Mobile view");
-//         $("#level-title").text("Touch the screen to Start");
-//         $(document).on("touchstart", function () {
-//             if (!started) {
-//                 startGame();
-//             }
-//         });
-//     }
-// }
-
-// checkScreenSize();
-// $(window).on('resize', checkScreenSize);
-
-
-
-
 // Start game Function
 function startGame() {
     $("#level-title").text("Level " + level);
@@ -140,9 +129,9 @@ function checkAnswer(currentLevel) {
 
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
-                const lastLevel = level;
-                console.log("your Last Level " + lastLevel);
-                $("#highScore").text("High Score: " + lastLevel)
+                setTimeout(() => {
+                displayHighScore();
+                }, 500);
                 nextSequence();
             }, 1000);
         }
@@ -161,6 +150,10 @@ function checkAnswer(currentLevel) {
         startOver();
     }
 }
+
+// var lastLevel = level;
+// console.log("your Last Level " + lastLevel);
+
 
 // Function for game over message
 function gameOver() {
