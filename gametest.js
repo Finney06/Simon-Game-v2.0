@@ -9,73 +9,76 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-$(document).ready(function () {
-    //Array of messages to display
-    var messages = [{
-        heading: "Welcome to Simon Memory Challenge!",
-        content: "Congratulations on loading the Simon Memory Challenge game! Get ready to test your memory and have some fun. Here's a quick guide to get you started:"
-    },
-    {
-        heading: "How to Play: ",
-        content: "<ul>\
-        <li> Press the Start button </li>\
-        <li> Watch and listen carefully as Simon plays a sequence of colored lights and sounds. </li>\
-        <li> Repeat the sequence by clicking the buttons in the same order. </li>\
-        <li> Keep up as the game gets more challenging with longer sequences. </li>\
-        <li> Make a mistake, and it's game over! </li>\
-      </ul>"
-    },
-    {
-        heading: "Tips: ",
-        content: "<ul>\
-        <li> Challlenge Yourself to beat your high Score!</li>\
-        <li> Share the gane with friends and see who has the best memory. </li>\
-        <li> Have a great time and enjoy the challenge</li>\
-        </ul>"
-    }
-    ];
+// $(document).ready(function () {
+//     //Array of messages to display
+//     var messages = [{
+//         heading: "Welcome to Simon Memory Challenge!",
+//         content: "Congratulations on loading the Simon Memory Challenge game! Get ready to test your memory and have some fun. Here's a quick guide to get you started:"
+//     },
+//     {
+//         heading: "How to Play: ",
+//         content: "<ul>\
+//         <li class=\"list\"> Press the Start button </li>\
+//         <li class=\"list\"> Watch and listen carefully as Simon plays a sequence of colored lights and sounds. </li>\
+//         <li class=\"list\"> Repeat the sequence by clicking the buttons in the same order. </li>\
+//         <li class=\"list\"> Keep up as the game gets more challenging with longer sequences. </li>\
+//         <li class=\"list\"> Make a mistake, and it's game over! </li>\
+//       </ul>"
+//     },
+//     {
+//         heading: "Tips: ",
+//         content: "<ul>\
+//         <li class=\"list\"> Challlenge Yourself to beat your high Score!</li>\
+//         <li class=\"list\"> Share the gane with friends and see who has the best memory. </li>\
+//         <li class=\"list\"> Have a great time and enjoy the challenge</li>\
+//         </ul>"
+//     }
+//     ];
 
-    var currentMessageIndex = 0;
+//     var currentMessageIndex = 0;
 
-    //Function to update the popup content
-    function updatePopupContent() {
-        $(".popupHeading").text(messages[currentMessageIndex].heading);
-        $(".popupContent").html(messages[currentMessageIndex].content);
-    };
+//     //Function to update the popup content
+//     function updatePopupContent() {
+//         $(".popupHeading").text(messages[currentMessageIndex].heading);
+//         $(".popupContent").html(messages[currentMessageIndex].content);
+//     };
 
-    //Show the popup when the page is loaded
-    // setTimeout(() => {
-    $("#popup1").show();
-    // }, 100);
+//         // Initial hiding of the popup
+//         $("#popup1").hide();
 
-    //Check if it's the last message
-    if (currentMessageIndex === messages.length - 1) {
-        // Change the button text to 'Start"
-        console.log("start")
-        $("#nextButton").text("Start");
+//     //Show the popup when the page is loaded
 
-        // Perform actions forthe "Start" button
-        $("#nextButton").on("click", function () {
-            setTimeout(() => {
-                $("#popup1").hide();
-            }, 100);
+//     $("#popup1").fadeIn(1000);
 
-            if(!started) {
-                startGame();
-            }
-        })
-    } else {
-        // Use the defaulf button text
-        $("#nextButton").text("Next");
-        // Show the next message when the "Next" button is clicked
-        $("#nextButton").click(function () {
-            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-            console.log(currentMessageIndex);
-            updatePopupContent();
-        });
-    }
-});
 
+//     //Check if it's the last message
+//     // else {
+//         // Use the default button text
+//         $("#nextButton").text("Next");
+//         // Show the next message when the "Next" button is clicked
+//         $("#nextButton").click(function () {
+//             currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+//             console.log(currentMessageIndex);
+//             updatePopupContent();
+
+//             if (currentMessageIndex === messages.length - 1) {
+//                 // Change the button text to 'Start"
+//                 $("#nextButton").text("Start");
+        
+//                 // Perform actions forthe "Start" button
+//                 $("#nextButton").on("click", function () {
+//                         $("#popup1").fadeOut();
+//             $("#popup1").fadeOut(1000, function () {
+//                 setTimeout(() => {
+//                     if (!started) {
+//                         startGame();
+//                     }
+//                 }, 500);
+//                 });
+//                 })
+//             } 
+//         });
+// });
 
 // //Function to check for the screensize
 // function checkScreenSize() {
@@ -145,6 +148,7 @@ function checkAnswer(currentLevel) {
         }, 200);
 
         gameOver();
+        console.log("gameover")
         startOver();
     }
 }

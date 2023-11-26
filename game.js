@@ -18,19 +18,19 @@ $(document).ready(function () {
     {
         heading: "How to Play: ",
         content: "<ul>\
-        <li> Press the Start button </li>\
-        <li> Watch and listen carefully as Simon plays a sequence of colored lights and sounds. </li>\
-        <li> Repeat the sequence by clicking the buttons in the same order. </li>\
-        <li> Keep up as the game gets more challenging with longer sequences. </li>\
-        <li> Make a mistake, and it's game over! </li>\
+        <li class=\"list\"> Press the Start button </li>\
+        <li class=\"list\"> Watch and listen carefully as Simon plays a sequence of colored lights and sounds. </li>\
+        <li class=\"list\"> Repeat the sequence by clicking the buttons in the same order. </li>\
+        <li class=\"list\"> Keep up as the game gets more challenging with longer sequences. </li>\
+        <li class=\"list\"> Make a mistake, and it's game over! </li>\
       </ul>"
     },
     {
         heading: "Tips: ",
         content: "<ul>\
-        <li> Challlenge Yourself to beat your high Score!</li>\
-        <li> Share the gane with friends and see who has the best memory. </li>\
-        <li> Have a great time and enjoy the challenge</li>\
+        <li class=\"list\"> Challlenge Yourself to beat your high Score!</li>\
+        <li class=\"list\"> Share the gane with friends and see who has the best memory. </li>\
+        <li class=\"list\"> Have a great time and enjoy the challenge</li>\
         </ul>"
     }
     ];
@@ -43,43 +43,48 @@ $(document).ready(function () {
         $(".popupContent").html(messages[currentMessageIndex].content);
     };
 
+    // Initial hiding of the popup
+    $("#popup1").hide();
+
     //Show the popup when the page is loaded
-    // setTimeout(() => {
-    $("#popup1").show();
-    // }, 100);
+
+    $("#popup1").fadeIn(1000);
+
 
     //Check if it's the last message
     // else {
-        // Use the default button text
-        $("#nextButton").text("Next");
-        // Show the next message when the "Next" button is clicked
-        $("#nextButton").click(function () {
-            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-            console.log(currentMessageIndex);
-            updatePopupContent();
+    // Use the default button text
+    $("#nextButton").text("Next");
+    // Show the next message when the "Next" button is clicked
+    $("#nextButton").click(function () {
+        currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+        console.log(currentMessageIndex);
+        updatePopupContent();
 
-            if (currentMessageIndex === messages.length - 1) {
-                // Change the button text to 'Start"
-                $("#nextButton").text("Start");
-        
-                // Perform actions forthe "Start" button
-                $("#nextButton").on("click", function () {
-                        $("#popup1").hide();
-        
-                    // if (!started) {
-                    //     startGame();
-                    // }
-                })
-            } 
-        });
-    // }
+        if (currentMessageIndex === messages.length - 1) {
+            // Change the button text to 'Start"
+            $("#nextButton").text("Start");
+
+            // Perform actions forthe "Start" button
+            $("#nextButton").on("click", function () {
+                $("#popup1").fadeOut();
+                $("#popup1").fadeOut(1000, function () {
+                    setTimeout(() => {
+                        if (!started) {
+                            startGame();
+                        }
+                    }, 500);
+                });
+            })
+        }
+    });
 });
 
 
 
 
 
-// //Function to check for the screensize
+// Function to check for the screensize
 // function checkScreenSize() {
 //     var screenWidth =
 //         window.innerWidth ||
@@ -89,11 +94,11 @@ $(document).ready(function () {
 //     if (screenWidth > 481) {
 //         console.log("Desktop view");
 //         $("#level-title").text("Press A Key to Start");
-//         $(document).keypress(function () {
-//             if (!started) {
-//                 startGame();
-//             }
-//         });
+        // $(document).keypress(function () {
+        //     if (!started) {
+        //         startGame();
+        //     }
+        // });
 //     } else {
 //         console.log("Mobile view");
 //         $("#level-title").text("Touch the screen to Start");
@@ -104,8 +109,11 @@ $(document).ready(function () {
 //         });
 //     }
 // }
-//     $(window).on('load', checkScreenSize);
-//     $(window).on('resize', checkScreenSize);
+
+// checkScreenSize();
+// $(window).on('resize', checkScreenSize);
+
+
 
 
 // Start game Function
@@ -132,13 +140,16 @@ function checkAnswer(currentLevel) {
 
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
+                const lastLevel = level;
+                console.log("your Last Level " + lastLevel);
+                $("#highScore").text("High Score: " + lastLevel)
                 nextSequence();
             }, 1000);
         }
     } else {
         console.log("Wrong");
         var audio = new Audio("sounds/wrong.mp3");
-        audio.play();
+        // audio.play();
 
         // Add visual feedback for wrong answer
         $("body").addClass("game-over");
@@ -158,11 +169,27 @@ function gameOver() {
         document.documentElement.clientWidth ||
         document.body.clientWidth;
     if (screenWidth > 481) {
+        console.log("Desktop view");
         $("#level-title").text("Game Over, Press Any Key to Restart");
+        $(document).on("keypress", function () {
+            if (!started) {
+                startGame();
+            }
+        });
     } else {
+        console.log("Mobile view");
         $("#level-title").text("Game Over, Touch the screen to Restart");
+
+        $(document).on("touchstart", function () {
+            if (!started) {
+                startGame();
+            }
+        });
     }
 }
+
+// $(window).on('load', gameOver);
+$(window).on('resize', gameOver);
 
 // Function to generate the computer random sequence
 function nextSequence() {
@@ -186,7 +213,7 @@ function nextSequence() {
 // Function to play sound for a given color
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3");
-    audio.play();
+    // audio.play();
 }
 
 // Function to animate button press
@@ -202,27 +229,5 @@ function startOver() {
     level = 0;
     gamePattern = [];
     started = false;
-    console.log(level + +gamePattern + started);
+    console.log(level + gamePattern + started);
 }
-
-//     // Your existing game logic goes here
-//     function startGame() {
-//         // ...
-//     }
-// });
-
-// $(document).ready(function () {
-//     // Show the popup when the page is loaded
-//     $("#popup").show();
-
-//     // Start the game when the "Start" button is clicked
-//     $("#startButton").click(function () {
-//       $("#popup").hide();
-//       startGame();
-//     });
-
-//     // Your existing game logic goes here
-//     function startGame() {
-//       // ...
-//     }
-//   });

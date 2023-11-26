@@ -12,7 +12,7 @@ body {
 }
 
 .popup {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -51,6 +51,17 @@ body {
    margin-bottom: 20px;
 }
 
+ul {
+  list-style-position: inside; 
+  padding-left: 0;
+  text-align: left;
+  
+}
+ 
+.list {
+  margin-bottom: 10px; 
+  /* display: ; */
+}
 
 
 .popupContentContainer button {
@@ -121,6 +132,13 @@ body {
   background-color: grey;
 }
 
+#highScore {
+  font-size: 2rem;
+  color: #fef2bf;
+  text-align: right;
+  margin-right: 20px;
+}
+
 
 @media (max-width: 480px) {
   #level-title {
@@ -139,16 +157,3 @@ body {
   align-self: center;
  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
