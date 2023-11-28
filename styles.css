@@ -79,7 +79,7 @@ ul {
   text-shadow: 2px 2px 0px #000;
   width: 200px;
   padding: 5%;
-  font-size: 0.8rem;
+  font-size: 18rem;
   /* box-shadow: inset -11px 10px 22px -3px rgba(255, 0, 0, 0.75); */
 }
 
@@ -180,7 +180,7 @@ ul {
  
  .popupContentContainer {
   overflow: auto;
-  height: 80%;
-  width: 80%;
+  max-height: 80%;
+  max-width: 80%;
 }
 }
