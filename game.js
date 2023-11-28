@@ -27,6 +27,7 @@ let highScore = loadHighScore();
 if (currentScore > highScore) {
     highScore = currentScore;
     saveHighScore(highScore);
+    console.log(highScore);
 }
 
 $("#highScore").text("High Score: " + highScore)
@@ -92,7 +93,6 @@ $(document).ready(function () {
 
             // Perform actions forthe "Start" button
             $("#nextButton").on("click", function () {
-                $("#popup1").fadeOut();
                 $("#popup1").fadeOut(1000, function () {
                     setTimeout(() => {
                         if (!started) {
@@ -129,16 +129,16 @@ function checkAnswer(currentLevel) {
 
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
-                setTimeout(() => {
                 displayHighScore();
+                setTimeout(() => {
+                    nextSequence();
                 }, 500);
-                nextSequence();
-            }, 1000);
+            }, 500);
         }
     } else {
         console.log("Wrong");
         var audio = new Audio("sounds/wrong.mp3");
-        // audio.play();
+        audio.play();
 
         // Add visual feedback for wrong answer
         $("body").addClass("game-over");
@@ -147,6 +147,7 @@ function checkAnswer(currentLevel) {
         }, 200);
 
         gameOver();
+        $(window).on('resize', gameOver);
         startOver();
     }
 }
@@ -182,7 +183,9 @@ function gameOver() {
 }
 
 // $(window).on('load', gameOver);
-$(window).on('resize', gameOver);
+   
+
+
 
 // Function to generate the computer random sequence
 function nextSequence() {
@@ -224,3 +227,16 @@ function startOver() {
     started = false;
     console.log(level + gamePattern + started);
 }
+
+// Clear the high score from local storage
+function clearHighScore() {
+    localStorage.removeItem('highScore');
+    // You may also want to update the displayed high score on the page if needed
+    $("#highScore").text("High Score: 0");
+}
+
+// ...
+
+// Example usage to clear high score, you can call this function when needed
+// clearHighScore();
+
