@@ -86,11 +86,11 @@ $(document).ready(function () {
         currentMessageIndex = (currentMessageIndex + 1) % messages.length;
         console.log(currentMessageIndex);
         updatePopupContent();
-   });
+ 
         if (currentMessageIndex === messages.length - 1) {
             // Change the button text to 'Start"
             $("#nextButton").text("Start");
-
+  });
             // Perform actions forthe "Start" button
             $("#nextButton").on("click", function () {
                 $("#popup1").fadeOut(1000, function () {
