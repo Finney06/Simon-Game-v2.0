@@ -69,8 +69,8 @@ ul {
   font-size: 1rem;
   /* margin-left: auto;  */
   align-self: flex-end;
-  padding: 20px 30px;
-  font-size: 18PX;
+  /* padding: 20px 30px; */
+  /* font-size: 18PX; */
   cursor: pointer;
   background: red;
   border-radius: 30px;
@@ -78,8 +78,18 @@ ul {
   color: white;
   text-shadow: 2px 2px 0px #000;
   width: 200px;
+  padding: 5%;
+  font-size: 0.8rem;
   /* box-shadow: inset -11px 10px 22px -3px rgba(255, 0, 0, 0.75); */
 }
+
+/* .popupContentContainer {
+
+}
+
+.popupContentContainer button {
+  font-size: 1rem;
+} */
 
 #level-title {
   font-family: "Press Start 2P", cursive;
@@ -91,7 +101,8 @@ ul {
 }
 
 .container {
-  margin: 30px auto;
+  /* margin: 30px auto; */
+  margin: 5% auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
@@ -99,9 +110,10 @@ ul {
 }
 
 .btn {
-  margin: 20px;
+  /* margin: 20px; */
   height: 200px;
   max-width: 200px;
+  margin: 5%;
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -139,6 +151,15 @@ ul {
   margin-right: 20px;
 }
 
+/* .container {
+  margin: 5% auto;
+}
+
+.btn {
+  margin: 5%;
+} */
+
+
 
 @media (max-width: 480px) {
   #level-title {
@@ -156,4 +177,10 @@ ul {
  .popupContentContainer button {
   align-self: center;
  }
+ 
+ .popupContentContainer {
+  overflow: auto;
+  height: 80%;
+  width: 80%;
+}
 }
