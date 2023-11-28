@@ -86,7 +86,7 @@ $(document).ready(function () {
         currentMessageIndex = (currentMessageIndex + 1) % messages.length;
         console.log(currentMessageIndex);
         updatePopupContent();
-
+   });
         if (currentMessageIndex === messages.length - 1) {
             // Change the button text to 'Start"
             $("#nextButton").text("Start");
@@ -102,7 +102,6 @@ $(document).ready(function () {
                 });
             })
         }
-    });
 });
 
 // Start game Function
