@@ -66,7 +66,7 @@ ul {
 
 .popupContentContainer button {
   font-family: "Press Start 2P", cursive;
-  font-size: 1rem;
+ /* font-size: 1rem; */
   /* margin-left: auto;  */
   align-self: flex-end;
   /* padding: 20px 30px; */
@@ -79,7 +79,7 @@ ul {
   text-shadow: 2px 2px 0px #000;
   width: 200px;
   padding: 5%;
-  font-size: 18rem;
+  font-size: 18px;
   /* box-shadow: inset -11px 10px 22px -3px rgba(255, 0, 0, 0.75); */
 }
 
