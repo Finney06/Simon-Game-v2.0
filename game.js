@@ -54,8 +54,8 @@ $(document).ready(function () {
     {
         heading: "Tips: ",
         content: "<ul>\
-        <li class=\"list\"> Challlenge Yourself to beat your high Score!</li>\
-        <li class=\"list\"> Share the gane with friends and see who has the best memory. </li>\
+        <li class=\"list\"> Challenge Yourself to beat your high Score!</li>\
+        <li class=\"list\"> Share the game with friends and see who has the best memory. </li>\
         <li class=\"list\"> Have a great time and enjoy the challenge</li>\
         </ul>"
     }
