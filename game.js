@@ -209,7 +209,7 @@ function nextSequence() {
 // Function to play sound for a given color
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3");
-    // audio.play();
+    audio.play();
 }
 
 // Function to animate button press
