@@ -90,19 +90,19 @@ $(document).ready(function () {
         if (currentMessageIndex === messages.length - 1) {
             // Change the button text to 'Start"
             $("#nextButton").text("Start");
-})
+        
             // Perform actions forthe "Start" button
-            $("#nextButton").on("click", function () {
+            $("#nextButton").off("click").on("click", function () {
                 $("#popup1").fadeOut(1000, function () {
                     setTimeout(() => {
                         if (!started) {
                             startGame();
                         }
                     }, 500);
-                });
-            
+               });
+            })
         }
-          });
+    });
 });
 
 // Start game Function
