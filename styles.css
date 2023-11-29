@@ -60,17 +60,11 @@ ul {
  
 .list {
   margin-bottom: 10px; 
-  /* display: ; */
 }
-
 
 .popupContentContainer button {
   font-family: "Press Start 2P", cursive;
- /* font-size: 1rem; */
-  /* margin-left: auto;  */
   align-self: flex-end;
-  /* padding: 20px 30px; */
-  /* font-size: 18PX; */
   cursor: pointer;
   background: red;
   border-radius: 30px;
@@ -80,16 +74,7 @@ ul {
   width: 200px;
   padding: 5%;
   font-size: 18px;
-  /* box-shadow: inset -11px 10px 22px -3px rgba(255, 0, 0, 0.75); */
 }
-
-/* .popupContentContainer {
-
-}
-
-.popupContentContainer button {
-  font-size: 1rem;
-} */
 
 #level-title {
   font-family: "Press Start 2P", cursive;
@@ -101,8 +86,7 @@ ul {
 }
 
 .container {
-  /* margin: 30px auto; */
-  margin: 5% auto;
+  margin: 3% auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
@@ -150,15 +134,6 @@ ul {
   text-align: right;
   margin-right: 20px;
 }
-
-/* .container {
-  margin: 5% auto;
-}
-
-.btn {
-  margin: 5%;
-} */
-
 
 
 @media (max-width: 480px) {
