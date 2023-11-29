@@ -20,45 +20,45 @@ function saveHighScore(score) {
     localStorage.setItem('highScore', score.toString());
 }
 
-function displayHighScore(){
+//Function for highscore
+function displayHighScore() {
     const currentScore = level;
-let highScore = loadHighScore();
+    let highScore = loadHighScore();
 
-if (currentScore > highScore) {
-    highScore = currentScore;
-    saveHighScore(highScore);
-    console.log(highScore);
+    if (currentScore > highScore) {
+        highScore = currentScore;
+        saveHighScore(highScore);
+        console.log(highScore);
+    }
+
+    $("#highScore").text("High Score: " + highScore)
+
 }
-
-$("#highScore").text("High Score: " + highScore)
-
-}
-
 
 $(document).ready(function () {
     //Array of messages to display
     var messages = [{
-        heading: "Welcome to Simon Memory Challenge!",
-        content: "Congratulations on loading the Simon Memory Challenge game! Get ready to test your memory and have some fun. Here's a quick guide to get you started:"
-    },
-    {
-        heading: "How to Play: ",
-        content: "<ul>\
+            heading: "Welcome to Simon Memory Challenge!",
+            content: "Congratulations on loading the Simon Memory Challenge game! Get ready to test your memory and have some fun. Here's a quick guide to get you started:"
+        },
+        {
+            heading: "How to Play: ",
+            content: "<ul>\
         <li class=\"list\"> Press the Start button </li>\
         <li class=\"list\"> Watch and listen carefully as Simon plays a sequence of colored lights and sounds. </li>\
         <li class=\"list\"> Repeat the sequence by clicking the buttons in the same order. </li>\
         <li class=\"list\"> Keep up as the game gets more challenging with longer sequences. </li>\
         <li class=\"list\"> Make a mistake, and it's game over! </li>\
       </ul>"
-    },
-    {
-        heading: "Tips: ",
-        content: "<ul>\
+        },
+        {
+            heading: "Tips: ",
+            content: "<ul>\
         <li class=\"list\"> Challenge Yourself to beat your high Score!</li>\
         <li class=\"list\"> Share the game with friends and see who has the best memory. </li>\
         <li class=\"list\"> Have a great time and enjoy the challenge</li>\
         </ul>"
-    }
+        }
     ];
 
     var currentMessageIndex = 0;
@@ -86,11 +86,11 @@ $(document).ready(function () {
         currentMessageIndex = (currentMessageIndex + 1) % messages.length;
         console.log(currentMessageIndex);
         updatePopupContent();
- 
+
         if (currentMessageIndex === messages.length - 1) {
             // Change the button text to 'Start"
             $("#nextButton").text("Start");
-        
+
             // Perform actions forthe "Start" button
             $("#nextButton").off("click").on("click", function () {
                 $("#popup1").fadeOut(1000, function () {
@@ -99,7 +99,7 @@ $(document).ready(function () {
                             startGame();
                         }
                     }, 500);
-               });
+                });
             })
         }
     });
@@ -152,10 +152,6 @@ function checkAnswer(currentLevel) {
     }
 }
 
-// var lastLevel = level;
-// console.log("your Last Level " + lastLevel);
-
-
 // Function for game over message
 function gameOver() {
     var screenWidth =
@@ -181,11 +177,6 @@ function gameOver() {
         });
     }
 }
-
-// $(window).on('load', gameOver);
-   
-
-
 
 // Function to generate the computer random sequence
 function nextSequence() {
@@ -234,9 +225,3 @@ function clearHighScore() {
     // You may also want to update the displayed high score on the page if needed
     $("#highScore").text("High Score: 0");
 }
-
-// ...
-
-// Example usage to clear high score, you can call this function when needed
-// clearHighScore();
-
