@@ -173,6 +173,9 @@ ul {
 
 /* Responsive styles for smaller screens */
 @media (max-width: 480px) {
+body {
+  min-width: 480px; 
+}
   /* Ensure a minimum width for the body on smaller screens */
   body {
     min-width: 480px;
