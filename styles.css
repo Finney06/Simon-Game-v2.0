@@ -8,7 +8,6 @@ body {
   text-align: center;
   background-color: #011f3f;
   font-family: "Press Start 2P", cursive;
-  min-width: 480px;
 }
 
 .popup {
@@ -137,6 +136,10 @@ ul {
 
 
 @media (max-width: 480px) {
+body {
+  min-width: 480px;
+}
+
   #level-title {
     font-size: 1.5rem;
   }
