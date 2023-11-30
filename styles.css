@@ -1,15 +1,18 @@
+/* Reset styles for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global styles for the entire page */
 body {
   text-align: center;
   background-color: #011f3f;
   font-family: "Press Start 2P", cursive;
 }
 
+/* Styles for the popup container */
 .popup {
   display: none;
   position: fixed;
@@ -20,6 +23,7 @@ body {
   background: rgba(14, 11, 11, 0.9);
 }
 
+/* Styles for the popup content container */
 .popupContentContainer {
   position: absolute;
   top: 50%;
@@ -32,49 +36,65 @@ body {
   border: 10px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   line-height: 1.5;
   text-shadow: 2px 2px 0px #000;
 }
 
+/* Styles for the popup heading */
 .popupHeading {
   color: white;
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
+/* Styles for the popup content */
 .popupContent {
-   color: yellow;
-   line-height: 1.5;
-   letter-spacing: 2px;
-   margin-bottom: 20px;
+  color: yellow;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
+/* Styles for unordered lists inside the popup content */
 ul {
-  list-style-position: inside; 
+  list-style-position: inside;
   padding-left: 0;
   text-align: left;
-  
-}
- 
-.list {
-  margin-bottom: 10px; 
 }
 
+/* Styles for list items inside the popup content */
+.list {
+  margin-bottom: 10px;
+}
+
+/* Styles for the popup button */
 .popupContentContainer button {
   font-family: "Press Start 2P", cursive;
   align-self: flex-end;
   cursor: pointer;
-  background: red;
+  background: rgb(255, 0, 0);
   border-radius: 30px;
-  border:5px solid black;
+  border: 5px solid black;
   color: white;
   text-shadow: 2px 2px 0px #000;
   width: 200px;
   padding: 5%;
   font-size: 18px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect */
 }
 
+/* Hover effect for the popup button */
+.popupContentContainer button:hover {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+/* Active (clicked) state for the popup button */
+.popupContentContainer button:active {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Styles for the level title */
 #level-title {
   font-family: "Press Start 2P", cursive;
   font-size: 3rem;
@@ -84,6 +104,7 @@ ul {
   text-shadow: 2px 2px 0px #000;
 }
 
+/* Styles for the container holding the colored buttons */
 .container {
   margin: 3% auto;
   display: grid;
@@ -92,20 +113,34 @@ ul {
   max-width: 480px;
 }
 
+/* Styles for the colored buttons */
 .btn {
-  /* margin: 20px; */
   height: 200px;
   max-width: 200px;
   margin: 5%;
   border: 10px solid black;
   border-radius: 20%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effect */
 }
 
+/* Hover effect for the colored buttons */
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Active (clicked) state for the colored buttons */
+.btn:active {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Game over styles */
 .game-over {
   background-color: red;
   opacity: 0.8;
 }
 
+/* Styles for individual colored buttons */
 .red {
   background-color: red;
 }
@@ -122,11 +157,13 @@ ul {
   background-color: yellow;
 }
 
+/* Styles for the pressed state of a button */
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
 
+/* Styles for displaying the high score */
 #highScore {
   font-size: 2rem;
   color: #fef2bf;
@@ -134,11 +171,12 @@ ul {
   margin-right: 20px;
 }
 
-
+/* Responsive styles for smaller screens */
 @media (max-width: 480px) {
-body {
-  max-width: 480px;
-}
+  /* Ensure a minimum width for the body on smaller screens */
+  body {
+    min-width: 480px;
+  }
 
   #level-title {
     font-size: 1.5rem;
@@ -148,17 +186,14 @@ body {
     margin-top: 50px;
   }
 
-  .content {
-    line-height: 1.7;
- }
+  /* Styles for the popup content on smaller screens */
+  .popupContentContainer button {
+    align-self: center;
+  }
 
- .popupContentContainer button {
-  align-self: center;
- }
- 
- .popupContentContainer {
-  overflow: auto;
-  max-height: 80%;
-  width: 80%;
-}
+  .popupContentContainer {
+    overflow: auto;
+    max-height: 80%;
+    width: 80%;
+  }
 }
