@@ -137,7 +137,7 @@ ul {
 
 @media (max-width: 480px) {
 body {
-  max-width: 480px;
+ /* max-width: 480px; */
 }
 
   #level-title {
