@@ -95,7 +95,7 @@ Test your memory and repeat the sequence of colors played by Simon. The game get
 ### Project Demo GIF
 ![Project Demo GIF](Images/video.gif)
 
-*Caption: Explore the dynamic gameplay, smooth UI interactions, and exciting features showcased in the GIF.*
+*Explore the dynamic gameplay, smooth UI interactions, and exciting features showcased in the GIF.*
 
 **Project Highlights:**
 - Experience the engaging gameplay that challenges your memory skills.
