@@ -20,7 +20,7 @@ Realizing the need for improved user guidance, I decided to create version 2.0. 
 - [License](#license)
 
 ## Demo
-[Link to Live Demo](#) - Provide a link to a live demo or a video showcasing your project.
+[Link to Live Demo](https://finney06.github.io/Simon-Game-v2.0/)
 
 ## Features
 - **Enhanced User Experience:** Version 2.0 offers an improved user interface for better accessibility and understanding.
@@ -33,7 +33,7 @@ Realizing the need for improved user guidance, I decided to create version 2.0. 
 - jQuery
 
 ## Getting Started
-1. Clone the repository: `git clone https://github.com/your-username/simon-memory-challenge.git`
+1. Clone the repository: `https://github.com/Finney06/Simon-Game-v2.0.git`
 2. Open `index.html` in your preferred web browser.
 
 ## How to Play
@@ -90,13 +90,23 @@ Test your memory and repeat the sequence of colors played by Simon. The game get
 - The high score is displayed at the bottom right of the screen.
 - The game automatically tracks and updates the high score.
 
-## Screenshots
-Include screenshots or GIFs of your project to visually represent its appearance and functionality.
+## Screenshots and GIF Demo
+
+### Project Demo GIF
+![Project Demo GIF](Images/video.gif)
+
+*Caption: Explore the dynamic gameplay, smooth UI interactions, and exciting features showcased in the GIF.*
+
+**Project Highlights:**
+- Experience the engaging gameplay that challenges your memory skills.
+- Observe the user-friendly UI designed for an intuitive experience.
+- Discover exciting features introduced in version 2.0 for an enhanced gaming experience.
+
 
 ## Acknowledgments
-Mention any third-party libraries, frameworks, or resources used.
+A special thanks to Angela Yu for their valuable guidance and support throughout the development of this project. I also acknowledge the use of ChatGPT for its assistance in providing coding assistance, helping with thought processes, debugging codes, and offering the best approaches to tackle this project. Additionally, I express gratitude to Stack Overflow for its valuable community support, the jQuery library and documentation, and Google for helpful resources.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-Feel free to customize this template further based on the specifics of your project. Make it informative and easy for others to understand and contribute to your project.
+
